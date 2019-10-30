@@ -1,0 +1,47 @@
+.download {
+  padding: $section-padding-lg 0;
+
+  &__browser {
+    max-width: 100rem;
+    display: flex;
+    justify-content: space-around;
+    margin: 6rem auto 0 auto;
+
+    &-image {
+      margin-bottom: 4rem;
+    }
+
+    &-name {
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    &-version {
+      margin-bottom: 4rem;
+      color: $color-grayish-blue;
+    }
+
+    &-divider {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.browser__container {
+  flex-basis: 25%;
+  height: 40rem;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 3rem 0;
+  box-shadow: 0 0.5rem 0.7rem -0.7rem $color-grayish-blue,
+    0.5rem 0 0.7rem -0.7rem $color-grayish-blue,
+    -0.5rem 0 0.7rem -0.7rem $color-grayish-blue;
+
+  &:nth-child(2) {
+    margin-top: 4rem;
+  }
+
+  &:nth-child(3) {
+    margin-top: 8rem;
+  }
+}
