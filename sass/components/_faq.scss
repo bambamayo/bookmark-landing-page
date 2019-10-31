@@ -1,0 +1,56 @@
+.faq {
+  padding: $section-padding-lg 0;
+
+  &:last-child {
+    text-align: center;
+  }
+
+  &__list {
+    width: 40%;
+    margin: 2rem auto 6rem auto;
+
+    &-item {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      cursor: pointer;
+      border-top: 0.05rem solid $color-grayish-blue;
+      padding: 3rem 0;
+      align-items: center;
+
+      &:last-child {
+        border-bottom: 0.05rem solid $color-grayish-blue;
+      }
+
+      &:hover &-header {
+        color: $color-primary-red;
+      }
+
+      &-header {
+        color: $color-dark-blue;
+        font-weight: 500;
+      }
+
+      &-img {
+        width: 1.8rem;
+        height: 1.2rem;
+
+        &--mod-image {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-text {
+        text-align: left;
+        color: $color-grayish-blue;
+        padding: 2rem 0;
+        display: none;
+
+        &--show-text {
+          display: block;
+        }
+      }
+    }
+  }
+}

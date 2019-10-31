@@ -1,13 +1,14 @@
-let tabNavigation = document.querySelectorAll(".features__tab__nav-btn");
-let tabItem = document.querySelectorAll(".features__tab__item");
+/****Show and Hide Features Tab *****/
+let tabNavigations = document.querySelectorAll(".features__tab__nav-btn");
+let tabItems = document.querySelectorAll(".features__tab__item");
 
-tabNavigation.forEach(nav =>
+tabNavigations.forEach(nav =>
   nav.addEventListener("click", e => {
-    tabNavigation.forEach(nav => {
+    tabNavigations.forEach(nav => {
       nav.className = "features__tab__nav-btn";
     });
 
-    tabItem.forEach(tab => {
+    tabItems.forEach(tab => {
       if (e.currentTarget.title === tab.getAttribute("id")) {
         tab.className = "features__tab__item ";
       } else {
@@ -19,3 +20,19 @@ tabNavigation.forEach(nav =>
       "features__tab__nav-btn features__tab__nav-btn--active";
   })
 );
+
+/******* Show and hide faq tabs */
+let faqListItems = document.querySelectorAll(".faq__list-item");
+faqListItems.forEach(item => {
+  item.addEventListener("click", () => {
+    let childrenArray = Array.from(item.children);
+    childrenArray.forEach(child => {
+      if (child.localName === "p") {
+        child.classList.toggle("faq__list-item-text--show-text");
+      }
+      if (child.localName === "img") {
+        child.classList.toggle("faq__list-item-img--mod-image");
+      }
+    });
+  });
+});

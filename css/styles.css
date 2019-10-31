@@ -100,6 +100,42 @@ body {
   .browser__container:nth-child(3) {
     margin-top: 8rem; }
 
+.faq {
+  padding: 10rem 0; }
+  .faq:last-child {
+    text-align: center; }
+  .faq__list {
+    width: 40%;
+    margin: 2rem auto 6rem auto; }
+    .faq__list-item {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      cursor: pointer;
+      border-top: 0.05rem solid #9194a1;
+      padding: 3rem 0;
+      align-items: center; }
+      .faq__list-item:last-child {
+        border-bottom: 0.05rem solid #9194a1; }
+      .faq__list-item:hover .faq__list-item-header {
+        color: #fa5757; }
+      .faq__list-item-header {
+        color: #252b46;
+        font-weight: 500; }
+      .faq__list-item-img {
+        width: 1.8rem;
+        height: 1.2rem; }
+        .faq__list-item-img--mod-image {
+          transform: rotate(180deg); }
+      .faq__list-item-text {
+        text-align: left;
+        color: #9194a1;
+        padding: 2rem 0;
+        display: none; }
+        .faq__list-item-text--show-text {
+          display: block; }
+
 .features {
   padding: 10rem 0;
   margin-top: -3rem; }
