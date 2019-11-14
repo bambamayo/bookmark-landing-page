@@ -1,7 +1,16 @@
-/****Show and Hide Features Tab *****/
-let tabNavigations = document.querySelectorAll(".features__tab__nav-btn");
-let tabItems = document.querySelectorAll(".features__tab__item");
+/********* NAME VARIABLES *********/
+let navItems = document.querySelectorAll(".header__nav__item"),
+  tabNavigations = document.querySelectorAll(".features__tab__nav-btn"),
+  tabItems = document.querySelectorAll(".features__tab__item"),
+  faqListItems = document.querySelectorAll(".faq__list-item"),
+  header = document.querySelector(".header"),
+  headerNavList = document.querySelector(".header__nav__list"),
+  openNavIcon = document.querySelector(".header__nav-icon-open"),
+  closeNavIcon = document.querySelector(".header__nav-icon-close"),
+  logoPathImage = document.querySelector(".change-fill");
+console.log(navItems);
 
+/****Show and Hide Features Tab *****/
 tabNavigations.forEach(nav =>
   nav.addEventListener("click", e => {
     tabNavigations.forEach(nav => {
@@ -26,7 +35,7 @@ tabNavigations.forEach(nav =>
 );
 
 /******* Show and hide faq tabs */
-let faqListItems = document.querySelectorAll(".faq__list-item");
+
 faqListItems.forEach(item => {
   item.addEventListener("click", () => {
     let childrenArray = Array.from(item.children);
@@ -81,11 +90,6 @@ contactForm.addEventListener(
 );
 
 /********** NAVIGATION OPENING AND CLOSING ON SMALL SCREENS  **********/
-let header = document.querySelector(".header");
-let headerNavList = document.querySelector(".header__nav__list");
-let openNavIcon = document.querySelector(".header__nav-icon-open");
-let closeNavIcon = document.querySelector(".header__nav-icon-close");
-let logoPathImage = document.querySelector(".change-fill");
 
 openNavIcon.addEventListener("click", e => {
   header.className = "header phone-header";
@@ -96,9 +100,21 @@ openNavIcon.addEventListener("click", e => {
 });
 
 closeNavIcon.addEventListener("click", e => {
+  closeNav();
+});
+
+/************ HIDE NAIGATION ON NAVIGATION ITEM CLICK *******/
+navItems.forEach(navItem => {
+  navItem.addEventListener("click", () => {
+    closeNav();
+  });
+});
+
+/******* FUNCTION DECLARATION ******/
+function closeNav() {
   header.className = "header";
   headerNavList.className = "header__nav__list";
   logoPathImage.style.fill = "#242A45";
   openNavIcon.classList.remove("hide");
   closeNavIcon.classList.add("hide");
-});
+}
