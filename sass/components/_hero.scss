@@ -1,20 +1,51 @@
 .hero {
+  @include respond(tab-port) {
+    overflow-x: hidden;
+  }
+
+  // @include respond(phone) {
+  //   margin-top: 30rem;
+  // }
+
   &-content {
     width: 75%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     padding: 16rem 0 10rem 0;
+
+    @include respond(tab-land) {
+      width: 90%;
+    }
+
+    @include respond(tab-port) {
+      width: 95%;
+    }
+
+    @include respond(tab-port) {
+      flex-wrap: wrap;
+    }
   }
 
   &__text-box {
     flex-basis: 40%;
 
+    @include respond(phone) {
+      flex-basis: 100%;
+      order: 2;
+      text-align: center;
+      margin-top: -7rem;
+    }
+
     &-header {
       font-size: 3.5rem;
       text-transform: capitalize;
       letter-spacing: 0.1rem;
-      font-weight: 500;
+
+      @include respond(tab-port) {
+        font-size: 3rem;
+        letter-spacing: 0.05rem;
+      }
 
       &--pri,
       &--sec {
@@ -28,24 +59,58 @@
   }
 
   &-image-container {
-    flex-basis: 40%;
+    flex-basis: 45%;
+
+    @include respond(phone) {
+      flex-basis: 100%;
+      margin-bottom: 10rem;
+
+      position: relative;
+    }
   }
 
   &__image {
     background-color: $color-primary-blue;
     height: 30rem;
     border-bottom-left-radius: 15rem;
-    width: 50rem;
+    width: 80%;
     position: relative;
-    right: -13rem;
-    bottom: -5rem;
+    right: -14rem;
+    bottom: 1rem;
+
+    @include respond(tab-land) {
+      right: -5.5rem;
+    }
+
+    @include respond(tab-port) {
+      right: -2rem;
+    }
+
+    @include respond(phone) {
+      right: -5rem;
+      top: -5rem;
+      height: 25rem;
+    }
 
     &-image {
-      width: auto;
-      height: auto;
       position: absolute;
-      left: -15rem;
-      top: -17rem;
+      top: -5rem;
+      left: -12rem;
+
+      @include respond(tab-land) {
+        top: -13rem;
+        left: -8rem;
+      }
+
+      @include respond(tab-port) {
+        top: -6.5rem;
+        left: -6rem;
+      }
+
+      @include respond(phone) {
+        top: -5.5rem;
+        left: -7rem;
+      }
     }
   }
 }

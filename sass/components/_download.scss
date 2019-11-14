@@ -7,6 +7,10 @@
     justify-content: space-around;
     margin: 6rem auto 0 auto;
 
+    @include respond(phone) {
+      flex-wrap: wrap;
+    }
+
     &-image {
       margin-bottom: 4rem;
     }
@@ -37,11 +41,30 @@
     0.5rem 0 0.7rem -0.7rem $color-grayish-blue,
     -0.5rem 0 0.7rem -0.7rem $color-grayish-blue;
 
+  @include respond(phone) {
+    flex-basis: 70%;
+    height: 43rem;
+  }
+
   &:nth-child(2) {
     margin-top: 4rem;
+
+    @include respond(phone) {
+      margin-top: 0;
+    }
   }
 
   &:nth-child(3) {
     margin-top: 8rem;
+
+    @include respond(phone) {
+      margin-top: 0;
+    }
+  }
+
+  &:not(:last-child) {
+    @include respond(phone) {
+      margin-bottom: 5rem;
+    }
   }
 }

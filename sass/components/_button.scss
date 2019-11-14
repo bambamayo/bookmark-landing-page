@@ -1,6 +1,6 @@
 .btn {
   display: inline-block;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 2rem;
   background-color: transparent;
   outline: none;
   border: none;
@@ -11,6 +11,14 @@
   box-shadow: 0 0.9rem 0.7rem -0.7rem $color-grayish-blue;
   border: 1px solid transparent;
 
+  @include respond(tab-port) {
+    font-size: 1.4rem;
+  }
+
+  @include respond(tab-port) {
+    font-size: 1.6rem;
+  }
+
   &--blue {
     background-color: $color-primary-blue;
     color: $color-white;
@@ -19,17 +27,56 @@
       background-color: transparent;
       border: 1px solid $color-primary-blue;
       color: $color-primary-blue;
+
+      @include respond(phone) {
+        background-color: $color-primary-blue;
+        color: $color-white;
+        border: 1px solid transparent;
+      }
+    }
+
+    &-mr10 {
+      margin-right: 1rem;
+
+      @include respond(tab-port) {
+        margin-right: 0.05rem;
+      }
+
+      @include respond(phone) {
+        margin-right: 1rem;
+      }
     }
   }
 
   &--grey {
     background-color: $color-grayish-blue;
+    border: 1px solid transparent;
     color: $color-dark-blue;
 
     &:hover {
       background-color: transparent;
       border: 1px solid $color-dark-blue;
       color: $color-dark-blue;
+
+      @include respond(phone) {
+        background-color: $color-grayish-blue;
+        border: 1px solid transparent;
+        color: $color-dark-blue;
+      }
+    }
+  }
+
+  &--hide-sm {
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  &--download-sm {
+    @include respond(phone) {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
     }
   }
 }

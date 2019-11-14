@@ -9,17 +9,34 @@ body {
 .section-header {
   text-align: center;
 
+  // @include respond(phone) {
+  //   padding: 0 1rem;
+  // }
+
   &-main {
     font-size: 3rem;
-    font-weight: 500;
+
+    &--top,
+    &--bottom {
+      display: block;
+    }
   }
 
   &-sub {
+    @include respond(phone) {
+      width: 75%;
+      margin-right: auto;
+      margin-left: auto;
+    }
     &--top,
     &--mid,
     &--bottom {
       display: block;
       color: $color-grayish-blue;
+
+      @include respond(phone) {
+        display: inline;
+      }
     }
   }
 }
