@@ -1,0 +1,91 @@
+.footer {
+  background-color: $color-dark-blue;
+  color: $color-white;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+
+  @include respond(phone) {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+  }
+
+  &__nav {
+    width: 60%;
+    margin: 0 auto;
+    height: 100%;
+
+    @include respond(phone) {
+      margin: 3rem auto;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @include respond(phone) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__nav-item {
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+
+  &__nav-link,
+  &__nav-link:link,
+  &__nav-link:active {
+    color: $color-white;
+    font-size: 1.3rem;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    transition: 0.2s ease-in color;
+
+    @include respond(phone) {
+      padding: 1rem;
+    }
+
+    &:nth-child(1) {
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      color: $color-primary-red;
+
+      @include respond(phone) {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__nav-icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-white;
+
+    &:hover {
+      fill: $color-primary-red;
+      transition: 0.2s ease-in color;
+
+      @include respond(phone) {
+        fill: $color-white;
+      }
+    }
+  }
+
+  &__nav-list--social {
+    margin-left: auto;
+    display: flex;
+
+    @include respond(phone) {
+      margin-left: 0;
+    }
+  }
+}

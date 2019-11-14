@@ -1,5 +1,6 @@
 .faq {
   padding: $section-padding-lg 0;
+  text-align: center;
 
   &:last-child {
     text-align: center;
@@ -8,6 +9,10 @@
   &__list {
     width: 40%;
     margin: 2rem auto 6rem auto;
+
+    @include respond(phone) {
+      width: 80%;
+    }
 
     &-item {
       display: flex;
@@ -25,6 +30,10 @@
 
       &:hover &-header {
         color: $color-primary-red;
+
+        @include respond(phone) {
+          color: $color-dark-blue;
+        }
       }
 
       &-header {
@@ -33,11 +42,13 @@
       }
 
       &-img {
-        width: 1.8rem;
-        height: 1.2rem;
+        width: 2rem;
+        height: 2rem;
+        fill: $color-primary-blue;
 
         &--mod-image {
           transform: rotate(180deg);
+          fill: $color-primary-red;
         }
       }
 

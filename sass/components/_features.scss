@@ -4,17 +4,27 @@
 
   &__tab__nav {
     text-align: center;
-    margin-bottom: 20rem;
+    margin-bottom: 13rem;
 
     &-cont {
-      width: 51.5%;
+      width: 51%;
       margin: 0 auto;
-
       border-bottom: 0.5px solid $color-grayish-blue;
+      display: flex;
+
+      justify-content: space-between;
+
+      @include respond(phone) {
+        flex-wrap: wrap;
+        border-bottom: none;
+        width: 100%;
+      }
     }
 
     &-btn {
-      padding: 3rem 4rem;
+      flex-basis: 30%;
+      padding: 4rem 0;
+      height: 1rem;
       color: hsl(229, 31%, 21%);
       text-transform: capitalize;
       background-color: transparent;
@@ -24,17 +34,75 @@
       border-bottom: 0.3rem solid transparent;
       transition: 0.1s ease-in color;
 
+      @include respond(phone) {
+        display: block;
+        flex-basis: 100%;
+        border-bottom: none;
+        position: relative;
+
+        padding: 0;
+
+        height: auto;
+
+        // border-bottom: 0.5px solid $color-grayish-blue;
+
+        &::before,
+        &::after {
+          content: " ";
+          width: 100%;
+          display: block;
+        }
+
+        &::before {
+          border-top: 1px solid $color-grayish-blue;
+          margin-bottom: 2rem;
+        }
+
+        &:last-child {
+          &::after {
+            border-bottom: 1px solid $color-grayish-blue;
+          }
+        }
+      }
+
       &:not(:last-child) {
         margin-right: 2rem;
+
+        @include respond(phone) {
+          margin-right: 0;
+        }
+      }
+      &-span {
+        @include respond(phone) {
+          display: block;
+          visibility: hidden;
+          width: 30%;
+          margin: 2rem auto 0 auto;
+          border-bottom: 2px solid $color-primary-red;
+        }
+
+        &--show {
+          @include respond(phone) {
+            visibility: visible;
+          }
+        }
       }
 
       &--active {
         border-bottom: 0.3rem solid $color-primary-red;
+
+        @include respond(phone) {
+          border: none;
+        }
       }
 
       &:hover {
         border-bottom: none;
         color: $color-primary-red;
+
+        @include respond(tab-port) {
+          color: hsl(229, 31%, 21%);
+        }
       }
     }
   }
@@ -46,6 +114,11 @@
     justify-content: space-between;
     animation: showFeature 0.2s ease-in;
 
+    position: relative;
+
+    @include respond(phone) {
+      flex-wrap: wrap;
+    }
     &--hide {
       display: none;
     }
@@ -56,21 +129,40 @@
     height: 30rem;
     background-color: $color-primary-blue;
     border-bottom-right-radius: 15rem;
-
+    // width: 80%;
     position: relative;
-    left: -7rem;
+    top: 0;
+    left: -10rem;
+
+    @include respond(phone) {
+      flex-basis: 70%;
+      top: 0;
+      left: 0.5rem;
+      margin-bottom: 5rem;
+    }
 
     &-image {
-      width: auto;
-      height: auto;
       position: absolute;
-      right: -17rem;
-      top: -13rem;
+      top: -10rem;
+      left: 8rem;
+      margin-right: -7rem;
+
+      @include respond(phone) {
+        top: -5rem;
+        left: 8rem;
+        margin-right: -10rem;
+      }
     }
   }
 
   &__tab__text-box {
     flex-basis: 40%;
+
+    @include respond(phone) {
+      flex-basis: 70%;
+      margin: 0 auto;
+      text-align: center;
+    }
 
     &-header {
       font-size: 3rem;
